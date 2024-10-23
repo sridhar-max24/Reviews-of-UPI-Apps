@@ -218,6 +218,7 @@ FROM public.phonepe_help
 WHERE replyContent IS NOT NULL;
 ```
 ### 6. Reviews Over Time for GPay
+![char03](reviews over time .png)
 ```sql
 SELECT 
     DATE_TRUNC('month', at) AS review_month, 
