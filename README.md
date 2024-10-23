@@ -100,6 +100,7 @@ SELECT
 FROM public.phonepe_help;
 ```
 ### 2. Average Score for Each App
+![chart01](Average Score by App.png)
 
 ```sql
 SELECT 
