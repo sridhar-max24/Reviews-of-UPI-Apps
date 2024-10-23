@@ -274,6 +274,11 @@ GROUP BY appVersion;
 - **Address Common Issues**: Focus on fixing frequent complaints highlighted in the lowest-rated reviews.
 - **Leverage Positive Feedback**: Use insights from high-rated reviews to bolster marketing strategies.
 - **Regular Updates**: Maintain a cycle of updates based on user feedback to ensure continuous improvement.
+ 
+ ## Author : SRIDHAR
+
+I am a self-taught data analyst currently honing my skills through YouTube tutorials and a Coursera course. In this project, I utilized data analysis techniques along with SQL, Python, and ChatGPT to enhance my understanding and capabilities in the field. I am also in my final year of pursuing a BCA degree through correspondence, which I expect to complete soon. This experience has significantly improved my skills, and I am actively seeking internship opportunities to further develop my expertise and gain practical experience in data analysis.
+  
 
 ## Conclusion
 This analysis provides a clear picture of how GPay compares to its competitors and highlights actionable areas for improvement. By focusing on user feedback and addressing concerns, GPay can enhance its user experience and better compete in the digital payment market.
