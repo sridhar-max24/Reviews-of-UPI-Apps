@@ -73,6 +73,191 @@ Despite the popularity of digital payment apps, user feedback reveals significan
 7. **User Activity**: Identified the most active users across the platforms to understand user engagement.
 8. **Sentiment Analysis**: Compared average scores of reviews with and without replies, providing insights into the effectiveness of customer service.
 9. **App Performance**: Evaluated scores by app version to assess how updates impact user satisfaction.
+   ## Analysis and Findings
+
+### 1. Total Reviews for Each App
+```sql
+SELECT 
+    COUNT(*) AS total_reviews, 
+    'gpay' AS app_name 
+FROM public.gpay_help 
+UNION ALL 
+SELECT 
+    COUNT(*) AS total_reviews, 
+    'paytm' AS app_name 
+FROM public.paytm_help 
+UNION ALL 
+SELECT 
+    COUNT(*) AS total_reviews, 
+    'phonepe' AS app_name 
+FROM public.phonepe_help;
+
+### 2. Average Score for Each App
+SELECT 
+    AVG(score) AS average_score, 
+    'gpay' AS app_name 
+FROM public.gpay_help 
+UNION ALL 
+SELECT 
+    AVG(score) AS average_score, 
+    'paytm' AS app_name 
+FROM public.paytm_help 
+UNION ALL 
+SELECT 
+    AVG(score) AS average_score, 
+    'phonepe' AS app_name 
+FROM public.phonepe_help;
+
+### 3. Top 5 Positive Reviews for Each App
+SELECT * FROM (
+    SELECT 
+        reviewId, 
+        content, 
+        score, 
+        'gpay' AS app_name 
+    FROM public.gpay_help 
+    ORDER BY score DESC 
+    LIMIT 5
+) AS gpay_reviews
+
+UNION ALL 
+
+SELECT * FROM (
+    SELECT 
+        reviewId, 
+        content, 
+        score, 
+        'paytm' AS app_name 
+    FROM public.paytm_help 
+    ORDER BY score DESC 
+    LIMIT 5
+) AS paytm_reviews
+
+UNION ALL 
+
+SELECT * FROM (
+    SELECT 
+        reviewId, 
+        content, 
+        score, 
+        'phonepe' AS app_name 
+    FROM public.phonepe_help 
+    ORDER BY score DESC 
+    LIMIT 5
+) AS phonepe_reviews;
+
+### 4. Lowest Rated Reviews for Each App
+SELECT * FROM (
+    SELECT 
+        reviewId, 
+        content, 
+        score, 
+        'gpay' AS app_name 
+    FROM public.gpay_help 
+    ORDER BY score ASC 
+    LIMIT 5
+) AS gpay_reviews
+
+UNION ALL 
+
+SELECT * FROM (
+    SELECT 
+        reviewId, 
+        content, 
+        score, 
+        'paytm' AS app_name 
+    FROM public.paytm_help 
+    ORDER BY score ASC 
+    LIMIT 5
+) AS paytm_reviews
+
+UNION ALL 
+
+SELECT * FROM (
+    SELECT 
+        reviewId, 
+        content, 
+        score, 
+        'phonepe' AS app_name 
+    FROM public.phonepe_help 
+    ORDER BY score ASC 
+    LIMIT 5
+) AS phonepe_reviews;
+
+### 5. Reviews with Replies Count for Each App
+SELECT 
+    COUNT(*) AS reviews_with_replies, 
+    'gpay' AS app_name 
+FROM public.gpay_help 
+WHERE replyContent IS NOT NULL
+UNION ALL 
+SELECT 
+    COUNT(*) AS reviews_with_replies, 
+    'paytm' AS app_name 
+FROM public.paytm_help 
+WHERE replyContent IS NOT NULL
+UNION ALL 
+SELECT 
+    COUNT(*) AS reviews_with_replies, 
+    'phonepe' AS app_name 
+FROM public.phonepe_help 
+WHERE replyContent IS NOT NULL;
+
+### 6. Reviews Over Time for GPay
+SELECT 
+    DATE_TRUNC('month', at) AS review_month, 
+    COUNT(*) AS review_count 
+FROM public.gpay_help 
+GROUP BY review_month 
+ORDER BY review_month;
+
+### 7. Top 5 Users with Most Reviews
+SELECT 
+    userName, 
+    COUNT(*) AS review_count 
+FROM (
+    SELECT userName FROM public.gpay_help
+    UNION ALL 
+    SELECT userName FROM public.paytm_help
+    UNION ALL 
+    SELECT userName FROM public.phonepe_help
+) AS all_reviews 
+GROUP BY userName 
+ORDER BY review_count DESC 
+LIMIT 5;
+
+### 8. Average Score of Reviews with and without Replies for GPay
+SELECT 
+    AVG(score) AS average_score, 
+    CASE 
+        WHEN replyContent IS NOT NULL THEN 'With Reply' 
+        ELSE 'Without Reply' 
+    END AS reply_status 
+FROM public.gpay_help 
+GROUP BY reply_status;
+
+### 9. App Performance by Version
+SELECT 
+    appVersion, 
+    AVG(score) AS average_score, 
+    'gpay' AS app_name 
+FROM public.gpay_help 
+GROUP BY appVersion 
+UNION ALL 
+SELECT 
+    appVersion, 
+    AVG(score) AS average_score, 
+    'paytm' AS app_name 
+FROM public.paytm_help 
+GROUP BY appVersion 
+UNION ALL 
+SELECT 
+    appVersion, 
+    AVG(score) AS average_score, 
+    'phonepe' AS app_name 
+FROM public.phonepe_help 
+GROUP BY appVersion;
+
 
 ## Recommendations
 
