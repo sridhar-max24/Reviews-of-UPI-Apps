@@ -80,6 +80,9 @@ CREATE TABLE public.paytm_help (
 ## Analysis and Findings
 
 ### 1. Total Reviews for Each App
+
+![logo]()
+
 ```sql
 SELECT 
     COUNT(*) AS total_reviews, 
@@ -97,7 +100,7 @@ SELECT
 FROM public.phonepe_help;
 ```
 ### 2. Average Score for Each App
-! [chart](Average Score by App.png).
+
 ```sql
 SELECT 
     AVG(score) AS average_score, 
