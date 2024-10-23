@@ -13,6 +13,18 @@ The primary aim of this project is to analyze user reviews of digital payment ap
 ### Description
 The dataset consists of user reviews for three popular payment applications: GPay, PhonePe, and Paytm. The reviews include attributes such as user ratings, content of the review, user details, and timestamps.
 
+## Analysis and Findings
+
+1. **Review Counts**: Counted the total number of reviews for each app, indicating overall user engagement.
+2. **Average Score**: Calculated the average scores to benchmark user satisfaction levels across the apps.
+3. **Top Positive Reviews**: Identified the highest-rated reviews to understand what users appreciate about each app.
+4. **Lowest Rated Reviews**: Analyzed the lowest-rated reviews to pinpoint common complaints and issues.
+5. **Reviews with Replies**: Examined how many reviews received responses, which can indicate the app's customer support responsiveness.
+6. **Reviews Over Time**: Analyzed trends in user feedback over time to identify patterns related to app updates or specific events.
+7. **User Activity**: Identified the most active users across the platforms to understand user engagement.
+8. **Sentiment Analysis**: Compared average scores of reviews with and without replies, providing insights into the effectiveness of customer service.
+9. **App Performance**: Evaluated scores by app version to assess how updates impact user satisfaction.
+
 ## Schema
 
 ```sql
@@ -66,17 +78,6 @@ CREATE TABLE public.paytm_help (
 Despite the popularity of digital payment apps, user feedback reveals significant areas of concern, particularly for GPay. Understanding these concerns can lead to improved user satisfaction and retention.
 
 ## Analysis and Findings
-
-1. **Review Counts**: Counted the total number of reviews for each app, indicating overall user engagement.
-2. **Average Score**: Calculated the average scores to benchmark user satisfaction levels across the apps.
-3. **Top Positive Reviews**: Identified the highest-rated reviews to understand what users appreciate about each app.
-4. **Lowest Rated Reviews**: Analyzed the lowest-rated reviews to pinpoint common complaints and issues.
-5. **Reviews with Replies**: Examined how many reviews received responses, which can indicate the app's customer support responsiveness.
-6. **Reviews Over Time**: Analyzed trends in user feedback over time to identify patterns related to app updates or specific events.
-7. **User Activity**: Identified the most active users across the platforms to understand user engagement.
-8. **Sentiment Analysis**: Compared average scores of reviews with and without replies, providing insights into the effectiveness of customer service.
-9. **App Performance**: Evaluated scores by app version to assess how updates impact user satisfaction.
-   ## Analysis and Findings
 
 ### 1. Total Reviews for Each App
 ```sql
