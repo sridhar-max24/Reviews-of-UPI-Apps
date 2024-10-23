@@ -10,19 +10,50 @@ The primary aim of this project is to analyze user reviews of digital payment ap
 ### Description
 The dataset consists of user reviews for three popular payment applications: GPay, PhonePe, and Paytm. The reviews include attributes such as user ratings, content of the review, user details, and timestamps.
 
-### Schema
-Each app's review data is structured as follows:
-- **reviewid**: Unique identifier for each review (UUID).
-- **username**: Name of the user who wrote the review (VARCHAR).
-- **userimage**: URL or path to the user's image (VARCHAR).
-- **content**: The text content of the review (TEXT).
-- **score**: User rating (INT).
-- **thumbsUpCount**: Number of thumbs up received (INT).
-- **reviewCreatedVersion**: Version of the app when the review was created (VARCHAR).
-- **at**: Date the review was written (DATE).
-- **replyContent**: Content of any replies to the review (TEXT).
-- **repliedAt**: Date when the reply was made (DATE).
-- **appVersion**: Version of the app reviewed (VARCHAR).
+## Schema
+
+```sql
+CREATE TABLE public.gpay_help (
+    reviewid UUID PRIMARY KEY,
+    username VARCHAR(255),
+    userimage VARCHAR(255),
+    content TEXT,
+    score INT,
+    thumbsUpCount INT,
+    reviewCreatedVersion VARCHAR(50),
+    at DATE,
+    replyContent TEXT,
+    repliedAt DATE,
+    appVersion VARCHAR(50)
+);
+
+CREATE TABLE public.phonepe_help (
+    reviewid UUID PRIMARY KEY,
+    username VARCHAR(255),
+    userimage VARCHAR(255),
+    content TEXT,
+    score INT,
+    thumbsUpCount INT,
+    reviewCreatedVersion VARCHAR(50),
+    at DATE,
+    replyContent TEXT,
+    repliedAt DATE,
+    appVersion VARCHAR(50)
+);
+
+CREATE TABLE public.paytm_help (
+    reviewid UUID PRIMARY KEY,
+    username VARCHAR(255),
+    userimage VARCHAR(255),
+    content TEXT,
+    score INT,
+    thumbsUpCount INT,
+    reviewCreatedVersion VARCHAR(50),
+    at DATE,
+    replyContent TEXT,
+    repliedAt DATE,
+    appVersion VARCHAR(50)
+);
 
 ## Business Problem
 
