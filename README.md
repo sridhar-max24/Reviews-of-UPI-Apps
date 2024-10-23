@@ -91,8 +91,9 @@ SELECT
     COUNT(*) AS total_reviews, 
     'phonepe' AS app_name 
 FROM public.phonepe_help;
-
+```
 ### 2. Average Score for Each App
+```sql
 SELECT 
     AVG(score) AS average_score, 
     'gpay' AS app_name 
@@ -107,8 +108,9 @@ SELECT
     AVG(score) AS average_score, 
     'phonepe' AS app_name 
 FROM public.phonepe_help;
-
+```
 ### 3. Top 5 Positive Reviews for Each App
+```sql
 SELECT * FROM (
     SELECT 
         reviewId, 
@@ -145,8 +147,9 @@ SELECT * FROM (
     ORDER BY score DESC 
     LIMIT 5
 ) AS phonepe_reviews;
-
+```
 ### 4. Lowest Rated Reviews for Each App
+```sql
 SELECT * FROM (
     SELECT 
         reviewId, 
@@ -183,8 +186,10 @@ SELECT * FROM (
     ORDER BY score ASC 
     LIMIT 5
 ) AS phonepe_reviews;
-
+```
 ### 5. Reviews with Replies Count for Each App
+
+```sql
 SELECT 
     COUNT(*) AS reviews_with_replies, 
     'gpay' AS app_name 
@@ -202,16 +207,18 @@ SELECT
     'phonepe' AS app_name 
 FROM public.phonepe_help 
 WHERE replyContent IS NOT NULL;
-
+```
 ### 6. Reviews Over Time for GPay
+```sql
 SELECT 
     DATE_TRUNC('month', at) AS review_month, 
     COUNT(*) AS review_count 
 FROM public.gpay_help 
 GROUP BY review_month 
 ORDER BY review_month;
-
+```
 ### 7. Top 5 Users with Most Reviews
+```sql
 SELECT 
     userName, 
     COUNT(*) AS review_count 
@@ -225,8 +232,9 @@ FROM (
 GROUP BY userName 
 ORDER BY review_count DESC 
 LIMIT 5;
-
+```
 ### 8. Average Score of Reviews with and without Replies for GPay
+```sql
 SELECT 
     AVG(score) AS average_score, 
     CASE 
@@ -235,8 +243,9 @@ SELECT
     END AS reply_status 
 FROM public.gpay_help 
 GROUP BY reply_status;
-
+```
 ### 9. App Performance by Version
+```sql
 SELECT 
     appVersion, 
     AVG(score) AS average_score, 
@@ -257,7 +266,7 @@ SELECT
     'phonepe' AS app_name 
 FROM public.phonepe_help 
 GROUP BY appVersion;
-
+```
 
 ## Recommendations
 
@@ -269,5 +278,4 @@ GROUP BY appVersion;
 ## Conclusion
 This analysis provides a clear picture of how GPay compares to its competitors and highlights actionable areas for improvement. By focusing on user feedback and addressing concerns, GPay can enhance its user experience and better compete in the digital payment market.
 
-## GitHub Structure
 
