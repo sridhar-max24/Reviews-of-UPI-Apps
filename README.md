@@ -55,6 +55,8 @@ CREATE TABLE public.paytm_help (
     appVersion VARCHAR(50)
 );
 
+```
+
 ## Business Problem
 
 ### Problem Statement
