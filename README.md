@@ -80,9 +80,6 @@ CREATE TABLE public.paytm_help (
 ## Analysis and Findings
 
 ### 1. Total Reviews for Each App
-
-![logo]()
-
 ```sql
 SELECT 
     COUNT(*) AS total_reviews, 
