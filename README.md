@@ -97,8 +97,6 @@ SELECT
 FROM public.phonepe_help;
 ```
 ### 2. Average Score for Each App
-![chart01](Average Score by App.png)
-
 ```sql
 SELECT 
     AVG(score) AS average_score, 
@@ -194,7 +192,6 @@ SELECT * FROM (
 ) AS phonepe_reviews;
 ```
 ### 5. Reviews with Replies Count for Each App
-
 ```sql
 SELECT 
     COUNT(*) AS reviews_with_replies, 
@@ -215,9 +212,6 @@ FROM public.phonepe_help
 WHERE replyContent IS NOT NULL;
 ```
 ### 6. Reviews Over Time for GPay
-
-![char03](reviews over time .png).
-
 ```sql
 SELECT 
     DATE_TRUNC('month', at) AS review_month, 
