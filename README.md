@@ -8,12 +8,16 @@ Exploring User Feedback on UPI Apps in Google Play Store
 ## Objective
 The primary aim of this project is to analyze user reviews of digital payment apps (GPay, PhonePe, and Paytm) to derive insights into user satisfaction and areas for improvement. The analysis seeks to identify trends, common issues, and strengths of each app, ultimately providing recommendations for enhancing GPay's performance relative to its competitors.
 
-## Dataset
 
 ### Description
 The dataset consists of user reviews for three popular payment applications: GPay, PhonePe, and Paytm. The reviews include attributes such as user ratings, content of the review, user details, and timestamps.
 
-## Analysis and Findings
+
+### Problem Statement
+Despite the popularity of digital payment apps, user feedback reveals significant areas of concern, particularly for GPay. Understanding these concerns can lead to improved user satisfaction and retention.
+
+
+## Business Problem
 
 1. **Review Counts**: Counted the total number of reviews for each app, indicating overall user engagement.
 2. **Average Score**: Calculated the average scores to benchmark user satisfaction levels across the apps.
@@ -72,10 +76,6 @@ CREATE TABLE public.paytm_help (
 
 ```
 
-## Business Problem
-
-### Problem Statement
-Despite the popularity of digital payment apps, user feedback reveals significant areas of concern, particularly for GPay. Understanding these concerns can lead to improved user satisfaction and retention.
 
 ## Analysis and Findings
 
