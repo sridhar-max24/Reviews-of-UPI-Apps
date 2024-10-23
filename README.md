@@ -1,6 +1,8 @@
 # Reviews-of-UPI-Apps
 Exploring User Feedback on UPI Apps in Google Play Store
+
 ![logo](https://media.gettyimages.com/id/1234065008/photo/digital-payment-apps-as-india-tech-booms.jpg?s=2048x2048&w=gi&k=20&c=p62XUBBOrItYCUyIk857cH3U3P3cwwL5NCE7Q2DQRxE=)
+
 # Project Overview
 
 ## Objective
