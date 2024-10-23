@@ -97,9 +97,7 @@ SELECT
 FROM public.phonepe_help;
 ```
 ### 2. Average Score for Each App
-
-![chart](Average Score by App.png).
-
+! [chart](Average Score by App.png).
 ```sql
 SELECT 
     AVG(score) AS average_score, 
